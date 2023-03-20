@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="SE">
+
+<!-- Metadata for the page -->
+<head>
+    <!-- Title of webpage in the browser -->
+    <title>Battle Royal</title>
+    <meta charset="UTF-8">
+    <!-- Link to use CSS style sheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Adjust to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<!-- All visible content on the page -->
+<body>
+    <!-- Main page heading -->
+    <h1>Home of the battle</h1>
+
+    <!-- A paragraph -->
+    <p>Välkommen till den blofiga hemsidan om död.</p>
+   
+
+    <div class="row">
+        <div class="column">
+          <img src="picture1.jpg" alt="Picture 1">
+          <p>Text for Picture 1</p>
+        </div>
+        <div class="column">
+          <img src="picture2.jpg" alt="Picture 2">
+          <p>Text for Picture 2</p>
+        </div>
+        <div class="column">
+          <img src="picture3.jpg" alt="Picture 3">
+          <p>Text for Picture 3</p>
+        </div>
+        <div class="column">
+          <img src="picture4.jpg" alt="Picture 4">
+          <p>Text for Picture 4</p>
+        </div>
+      </div>
+      
+
+   
+    <p id="demo"></p>
+
+  
+
+   
+</body>
+</html>
