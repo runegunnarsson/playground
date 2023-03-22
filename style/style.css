@@ -20,18 +20,6 @@ h1 {
     height: auto;
 }
 
-.img1 {
-  border: 1px solid #ddd;
-   width: 200px;
-  background-color: rgba(246, 246, 246, 0);
-  
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;  
-    padding-top: 5px;
-    padding-right: 30px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-}
-
 /*Media query that shrinks width of smiley face to 300px when viewport is equal to or smaller than 400px*/
 
 @media only screen and (max-width: 400px) {
@@ -40,16 +28,17 @@ h1 {
     #smiley {
         width: 300px;
     }
- /* Media query to set smiley face's width to percentage when viewport is equal to or smaller than 300px */
+    /* Media query to set smiley face's width to percentage when viewport is equal to or smaller than 300px */
     @media only screen and (max-width: 300px) {
         #smiley {
             max-width: 300px;
             width: 100%;
         }
     }
+        
+            }
 
-    
- /* Container needed to position the button. Adjust the width as needed */
+/* Container needed to position the button. Adjust the width as needed */
 .container {
     position: relative;
     width: 50%;
