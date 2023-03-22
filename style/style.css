@@ -15,6 +15,19 @@ h1 {
     color: green;
 }
 
+.img1 {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  background-color: rgba(246, 246, 246, 0);
+  
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;  
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+}
+
 #smiley {
     width: 50%;
     height: auto;
