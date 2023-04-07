@@ -83,17 +83,49 @@
                 background-color: #1C6D36;
             }
 
+            #flygande-bild {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: transform 0.5s ease-in-out;
+            }
+
         </style>
 
     </head>
 
     <body>
 
+        <script>
+            // Skapa en <img> tagg
+            var bild = document.createElement("img");
+
+            // Ange källan till bilden
+            bild.src = "image/ADAM2.png";
+
+            // Ange en slumpmässig startposition för bilden
+            var maxTop = window.innerHeight - bild.height;
+            var maxLeft = window.innerWidth - bild.width;
+            bild.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+            bild.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+
+            // Lägg till bilden i dokumentet
+            document.body.appendChild(bild);
+
+            // Flytta bilden runt på sidan med en viss tidsfördröjning
+            setInterval(function () {
+                var x = Math.floor(Math.random() * window.innerWidth);
+                var y = Math.floor(Math.random() * window.innerHeight);
+                bild.style.transform = "translate(" + x + "px," + y + "px)";
+            }, 2000);
+        </script>
+
+
         <div class="protected">
             <div class="protected__alert" data-id="alert">Fel Lösenord</div>
             <div class="protected__content">
                 <h1 class="protected__content__heading">Du behöver skriva in nytt lösenord</h1>
-                <input class="protected__content__input" data-id="password" type="password" placeholder="password"/>
+                <input class="protected__content__input" data-id="password" type="password" placeholder="password" />
                 <button data-id="button" type="button" class="protected__content__btn">Fortsätt</button>
             </div>
         </div>
