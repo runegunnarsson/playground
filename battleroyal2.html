@@ -87,7 +87,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                transition: transform 0.5s ease-in-out;
+                transition: transform 2s ease-in-out;
             }
 
         </style>
@@ -95,6 +95,8 @@
     </head>
 
     <body>
+
+        <!-- Flygande bild -->
 
         <script>
             // Skapa en <img> tagg
@@ -104,22 +106,84 @@
             bild.src = "image/ADAM2.png";
 
             // Ange en slumpmässig startposition för bilden
-            var maxTop = window.innerHeight - bild.height;
-            var maxLeft = window.innerWidth - bild.width;
-            bild.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
-            bild.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+            var maxTop = window.innerHeight;
+            var maxLeft = window.innerWidth;
+           
+            bild.style.top = Math.floor(Math.random() * maxTop) + "px";
+            bild.style.left = Math.floor(Math.random() * maxLeft) + "px";
 
             // Lägg till bilden i dokumentet
             document.body.appendChild(bild);
 
-            // Flytta bilden runt på sidan med en viss tidsfördröjning
+            // Move the image continuously within the screen bounds
+            var currentX = parseInt(bild.style.left);
+            var currentY = parseInt(bild.style.top);
+
+            function moveImage(timestamp) {
+                var newX = currentX * Math.random();
+                var newY = currentY * Math.random();
+
+               
+                // Calculate the distance and direction to move the image
+                var deltaX = newX - currentX;
+                var deltaY = newY - currentY;
+                var distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                var directionX = deltaX / distance;
+                var directionY = deltaY / distance;
+
+                // Move the image in small increments
+                currentX += directionX * distance * 0.007;
+                currentY += directionY * distance * 0.007;
+                bild.style.transform = "translate(" + currentX + "px," + currentY + "px)";
+
+                // Wrap the image around the screen if it goes out of bounds
+                if (currentX < -bild.width) {
+                    currentX = window.innerWidth;
+                }
+                if (currentY < -bild.height) {
+                    currentY = window.innerHeight;
+                }
+                if (currentX > window.innerWidth) {
+                    currentX = -bild.width;
+                }
+                if (currentY > window.innerHeight) {
+                    currentY = -bild.height;
+                }
+
+                // Continue moving the image
+                window.requestAnimationFrame(moveImage);
+            }
+
+            window.requestAnimationFrame(moveImage);
+
+            /* Flytta bilden runt på sidan med en viss tidsfördröjning
             setInterval(function () {
-                var x = Math.floor(Math.random() * window.innerWidth);
-                var y = Math.floor(Math.random() * window.innerHeight);
+                var x = Math.floor(Math.random() * maxLeft);
+                var y = Math.floor(Math.random() * maxTop);
+                // Check if the new position is outside the screen bounds and adjust if necessary
+                if (x < 0) {
+                    x = 0;
+                }
+                if (y < 0) {
+                    y = 0;
+                }
+                if (x > maxLeft) {
+                    x = maxLeft;
+                }
+                if (y > maxTop) {
+                    y = maxTop;
+                }
+
                 bild.style.transform = "translate(" + x + "px," + y + "px)";
-            }, 2000);
+            }, 1000);
+
+            */
+
+            
         </script>
 
+
+        <!-- Lösenord för sidan -->
 
         <div class="protected">
             <div class="protected__alert" data-id="alert">Fel Lösenord</div>
