@@ -16,21 +16,43 @@ h1 {
 }
 
 .img1 {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 200px;
-  background-color: rgba(246, 246, 246, 0);
-  
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;  
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    background-color: rgba(246, 246, 246, 0);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding-top: 5px;
     padding-right: 30px;
     padding-bottom: 5px;
     padding-left: 30px;
 }
 
-#smiley {
-    width: 50%;
+.picture {
+    display: block;
+    max-width: 100%;
     height: auto;
+    margin: 0 auto;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container2 {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    margin: 5px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 /*Media query that shrinks width of smiley face to 300px when viewport is equal to or smaller than 400px*/
@@ -56,6 +78,7 @@ h1 {
     position: relative;
     width: 50%;
 }
+
 
     /* Make the image responsive */
     .container img {
