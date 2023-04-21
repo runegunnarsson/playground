@@ -109,8 +109,8 @@
             var maxTop = window.innerHeight;
             var maxLeft = window.innerWidth;
            
-            bild.style.top = Math.floor(Math.random() * maxTop) + "px";
-            bild.style.left = Math.floor(Math.random() * maxLeft) + "px";
+            bild.style.top = 5 * Math.random() * maxTop + "px";
+            bild.style.left = 3 * Math.random() * maxLeft + "px";
 
             // Lägg till bilden i dokumentet
             document.body.appendChild(bild);
@@ -120,8 +120,8 @@
             var currentY = parseInt(bild.style.top);
 
             function moveImage(timestamp) {
-                var newX = currentX * Math.random();
-                var newY = currentY * Math.random();
+                var newX = maxLeft * Math.random();
+                var newY = maxTop * Math.random();
 
                
                 // Calculate the distance and direction to move the image
@@ -132,8 +132,8 @@
                 var directionY = deltaY / distance;
 
                 // Move the image in small increments
-                currentX += directionX * distance * 0.007;
-                currentY += directionY * distance * 0.007;
+                currentX += directionX * distance * 0.003;
+                currentY += directionY * distance * 0.003;
                 bild.style.transform = "translate(" + currentX + "px," + currentY + "px)";
 
                 // Wrap the image around the screen if it goes out of bounds
@@ -186,11 +186,11 @@
         <!-- Lösenord för sidan -->
 
         <div class="protected">
-            <div class="protected__alert" data-id="alert">Fel Lösenord</div>
+            <div class="protected__alert" data-id="alert">Wrong!</div>
             <div class="protected__content">
-                <h1 class="protected__content__heading">Du behöver skriva in nytt lösenord</h1>
+                <h1 class="protected__content__heading">Enter passkey</h1>
                 <input class="protected__content__input" data-id="password" type="password" placeholder="password" />
-                <button data-id="button" type="button" class="protected__content__btn">Fortsätt</button>
+                <button data-id="button" type="button" class="protected__content__btn">Go on!</button>
             </div>
         </div>
 
